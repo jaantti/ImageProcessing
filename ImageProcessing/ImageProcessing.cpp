@@ -60,6 +60,11 @@ int _tmain(int argc, _TCHAR* argv[])
 		cvtColor(frame, frame, CV_BGR2GRAY);		
 		flip(frame, frame, -1);
 		GaussianBlur(frame, frame, Size(11, 11), 0);
+		//Mat mat;
+		Mat mat;
+		divide(255, frame, mat);		
+		sqrt(mat, mat);
+		divide(1/255.0, mat, frame);
 		//resize(frame, frame, size);
 		if (binThresh) threshold(frame, frame, thresh, 255, CV_THRESH_BINARY);
 		//goodFeaturesToTrack(frame, frame, min, 0.1, 0.1);
